@@ -1,10 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sakutto Works</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project GHOST SHIP | High-Performance MCP Gateway</title>
+    <style>
+        :root {
+            --bg: #0a0a0c;
+            --text: #e0e0e6;
+            --accent: #00f2ff;
+            --secondary: #888891;
+            --card-bg: #16161a;
+        }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent);
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin: 0 0 16px;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p.description {
+            font-size: 1.25rem;
+            color: var(--secondary);
+            margin-bottom: 40px;
+        }
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background-color: var(--accent);
+            color: #000;
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            border: 1px solid #333;
+            color: var(--text);
+        }
+        .btn-outline:hover {
+            background: #1a1a1e;
+        }
+        .ai-discovery {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: left;
+        }
+        .ai-discovery h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+            color: var(--secondary);
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 60px;
+            font-size: 0.85rem;
+            color: #444;
+        }
+    </style>
 </head>
 <body>
-    <h1>Sakutto Works</h1>
-    <p>Simple tools for smart work.</p>
+    <div class="container">
+        <div class="status-badge">
+            <span class="status-dot"></span> System Operational
+        </div>
+        <h1>Project GHOST SHIP</h1>
+        <p class="description">High-performance MCP Gateway for autonomous AI agents. Routing intelligence between Edge and Core Compute.</p>
+        
+        <div class="cta-group">
+            <a href="https://sakuttoworks.lemonsqueezy.com/" class="btn btn-primary">Get License Key</a>
+            <a href="https://rapidapi.com/" class="btn btn-outline">RapidAPI Hub</a>
+        </div>
+
+        <div class="ai-discovery">
+            <h2>🤖 AI Agent Discovery</h2>
+            <div class="links">
+                <a href="/llms.txt">/llms.txt (Catalog)</a>
+                <a href="/llms-full.txt">/llms-full.txt (Full Tech Specs)</a>
+                <a href="/mcp.json">/mcp.json (Server Definition)</a>
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2026 Sakutto Works. Powered by Cloudflare Workers & Google Cloud Run.
+        </footer>
+    </div>
 </body>
 </html>
