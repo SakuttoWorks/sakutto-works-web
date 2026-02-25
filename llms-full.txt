@@ -1,0 +1,28 @@
+# Project GHOST SHIP - Technical Specification (v1.3.1)
+
+## 1. System Infrastructure
+- **Edge Proxy**: `https://api.sakutto.works/` (Cloudflare Workers)
+- **Core Origin**: `https://placeholder-run-url.a.run.app` (Google Cloud Run)
+- **Store Identity**: Lemon Squeezy Store ID `282368`
+- **Environment**: Production
+
+## 2. API Endpoints & Routing
+- **GET /llms.txt**: Discovery profile for AI agents.
+- **GET /mcp.json**: MCP server configuration.
+- **POST /generate**: Core AI reasoning and web search (Routes to Core Origin).
+- **GET /rapidapi/status**: Health check for RapidAPI gateway.
+- **POST /webhook/lemon-squeezy**: License activation and subscription management.
+
+## 3. Authentication & Security
+- **Inter-Service**: `X-Service-Auth` header is required for Edge -> Core communication.
+- **End-User**: Lemon Squeezy License Keys are validated via Redis.
+- **Headers**:
+  - `Access-Control-Allow-Origin: *`
+  - `X-RapidAPI-Proxy-Secret`: Required for RapidAPI forwarded requests.
+
+## 4. Operational Constraints
+- **Compatibility Date**: 2024-11-01 (Cloudflare Python Workers)
+- **Observability**: Enabled via Cloudflare Logpush/Analytics.
+- **BudgetGuardian**: Daily search quota is enforced to prevent over-billing.
+- **Cache Layer**: Repetitive queries are served via Upstash Redis (Zero Cost).
+- **Rate Limit**: 10 requests per minute per license key.
