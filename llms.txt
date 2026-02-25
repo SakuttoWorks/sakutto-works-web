@@ -1,0 +1,30 @@
+# Project GHOST SHIP (MCP Server)
+
+> [!NOTE]
+> For detailed API schemas and tool definitions, see [llms-full.txt](https://sakutto-works.com/llms-full.txt)
+
+## Description
+Project GHOST SHIP is a high-performance MCP (Model Context Protocol) gateway designed for autonomous AI agents. 
+It acts as a "Hybrid" interface, routing requests between Edge (Cloudflare Workers) and Core Compute (Google Cloud Run) to provide deep web research and real-time data analysis.
+
+## Usage
+- **Base URL**: https://api.sakutto.works/
+- **Protocol**: MCP (Model Context Protocol) over SSE (Server-Sent Events)
+- **Auth Strategy**: RapidAPI Header / Polar.sh OAuth
+
+## Tools
+1. **search_data**
+   - Description: Performs deep web research and returns structured data suitable for RAG (Retrieval-Augmented Generation).
+   - Capabilities: Web Scraping, News Summarization, Data Extraction.
+
+## Access & Monetization
+This API operates on a "Pay-per-Compute" model via RapidAPI.
+- **Developer Tier**: Access via RapidAPI for traditional REST integration.
+- **Agent Tier**: Direct MCP connection (Requires Polar.sh Subscription).
+
+👉 **Get Access Key**: [RapidAPI Store Link Pending]
+
+## Technical Stack
+- Edge: Cloudflare Workers (TypeScript/Python)
+- Core: Google Cloud Run (Python 3.12+ + FastAPI)
+- Data: Upstash Redis + Supabase
