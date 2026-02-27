@@ -1,8 +1,12 @@
 {
     "mcpVersion": "1.0.0",
-    "name": "Sakutto-Worker-Edge",
-    "description": "Hybrid MCP Gateway: Routes complex logic to Google Cloud Run and simple tasks to Cloudflare Workers.",
+    "name": "SakuttoWorks-Agent-Commerce-OS-Catalog",
+    "description": "The official MCP catalog for Sakutto Works Agent-Commerce-OS. Provides autonomous tools for deep research, status monitoring, and market analytics.",
     "version": "1.0.0",
+    "server": {
+        "url": "https://api.sakutto.works/mcp/",
+        "transport": "sse"
+    },
     "capabilities": {
         "tools": {},
         "resources": {},
@@ -11,13 +15,18 @@
     "tools": [
         {
             "name": "search_data",
-            "description": "Performs deep web research and returns structured data suitable for RAG. Uses Python Core backend.",
+            "description": "High-fidelity autonomous research tool. Performs deep web scraping and returns structured Markdown/JSON optimized for RAG. Powered by Agent-Commerce-Core.",
             "inputSchema": {
                 "type": "object",
                 "properties": {
                     "query": {
                         "type": "string",
-                        "description": "The search query or topic to research."
+                        "description": "The specific research topic or complex query to investigate."
+                    },
+                    "depth": {
+                        "type": "string",
+                        "enum": ["standard", "deep"],
+                        "description": "Research depth level. 'deep' includes extensive technical documentation analysis."
                     }
                 },
                 "required": [
@@ -27,10 +36,26 @@
         },
         {
             "name": "get_status",
-            "description": "Checks the operational status of the Ghost Ship infrastructure.",
+            "description": "Retrieves real-time operational status and latency metrics of the Agent-Commerce-OS infrastructure (Gateway and Core layers).",
             "inputSchema": {
                 "type": "object",
                 "properties": {}
+            }
+        },
+        {
+            "name": "market_analytics",
+            "description": "Analyzes financial data and market trends via Agent-Commerce-Core. Provides structured insights for investment or business intelligence tasks.",
+            "inputSchema": {
+                "type": "object",
+                "properties": {
+                    "symbol": {
+                        "type": "string",
+                        "description": "Stock symbol or market indicator to analyze."
+                    }
+                },
+                "required": [
+                    "symbol"
+                ]
             }
         }
     ]
