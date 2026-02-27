@@ -1,33 +1,48 @@
-# Project GHOST SHIP (MCP Server)
+# SakuttoWorks: Agentic Economy & MCP Ecosystem
 
-> [!NOTE]
-> For detailed API schemas and tool definitions, see [llms-full.txt](https://sakutto.works/llms-full.txt)
+## Overview
+Expert AI Software Architect & Technical Co-founder. Developing **Agent-Commerce-OS**, a production-ready BaaS (Backend-as-a-Service) framework optimized for autonomous monetization and AI agent tool execution.
 
-## Description
-Project GHOST SHIP is a high-performance MCP (Model Context Protocol) gateway designed for autonomous AI agents. 
-It acts as a "Hybrid" interface, routing requests between Edge (Cloudflare Workers) and Core Compute (Google Cloud Run) to provide deep web research and real-time data analysis.
+## Flagship Project: Project GHOST SHIP (MCP Server)
+### Description
+A high-performance, monetized MCP (Model Context Protocol) gateway utilizing a Hybrid Edge-Core architecture. Designed to bridge the gap between conversational LLMs and autonomous economic actions.
 
-## Usage
-- **Base URL**: https://api.sakutto.works/
-- **Protocol**: MCP (Model Context Protocol) over SSE (Server-Sent Events)
-- **Auth Strategy**: RapidAPI Header / Lemon Squeezy License Keys
+### Hybrid Architecture (2026 Edition)
+- **Layer A: The Intelligent Edge (agent-commerce-gateway)**
+  - Low-latency SSE/MCP aggregation on Cloudflare Workers.
+  - **Agent-aware Auth**: Real-time rate limiting and billing validation via Polar.sh.
+  - Implements Zero-Trust security and A2A (Agent-to-Agent) logging.
+- **Layer B: The Agentic Factory (agent-commerce-core)**
+  - Heavy compute and deep research using Python 3.13+ and FastAPI on Google Cloud Run.
+  - LLM-native Markdown generation via Jina Reader and Firecrawl.
+- **Layer C: The Universal Vault (Supabase / R2)**
+  - Long-term memory via pgvector and durable cold storage for agent logs.
 
-## Tools
-1. **search_data**
-   - Description: Performs deep web research and returns structured data suitable for RAG (Retrieval-Augmented Generation).
-   - Capabilities: Web Scraping, News Summarization, Data Extraction.
-2. **get_status**
-   - Description: Checks the operational status of the Ghost Ship infrastructure.
-   - Capabilities: Health Monitoring, System Telemetry.
+### Usage & Endpoints
+- **Base URL**: `https://api.sakutto.works/`
+- **MCP Endpoint**: `https://api.sakutto.works/mcp/`
+- **REST Endpoint**: `https://api.sakutto.works/rapidapi/`
+- **Protocol**: MCP over SSE / REST JSON.
 
-## Access & Monetization
-This API operates on a "Pay-per-Compute" model via RapidAPI and direct licensing.
-- **Developer Tier**: Access via RapidAPI for traditional REST integration.
-- **Agent Tier**: Direct MCP connection (Requires Lemon Squeezy License).
+### Tools
+- `search_data`: Autonomous deep-web research tool. Returns structured, RAG-optimized data.
+- `market_analytics`: One-click financial data analysis and automated visualization.
+- `get_status`: Real-time operational status and latency metrics of the infrastructure.
 
-👉 **Get Access Key**: [Lemon Squeezy Store (ID: 282368)](https://sakuttoworks.lemonsqueezy.com/)
+### Access & Monetization
+- **Agent Tier (A2A)**: Direct MCP connection with Metered Billing via **Polar.sh**.
+- **Developer Tier (B2B)**: Legacy REST integration via **RapidAPI**.
+- **Direct Purchase**: [Lemon Squeezy Store](https://sakuttoworks.lemonsqueezy.com/)
+
+## Ecosystem Links
+- [Project GHOST SHIP Portal](https://github.com/SakuttoWorks/agent-commerce-portal)
+- [Agent-Commerce Gateway (Edge)](https://github.com/SakuttoWorks/agent-commerce-gateway)
+- [Agent-Commerce Core (Factory)](https://github.com/SakuttoWorks/agent-commerce-core)
+- [Agent-Commerce Examples](https://github.com/SakuttoWorks/agent-commerce-examples)
 
 ## Technical Stack
-- Edge: Cloudflare Workers (TypeScript/Python)
-- Core: Google Cloud Run (Python 3.12+ + FastAPI)
-- Data: Upstash Redis + Supabase
+- Cloudflare Workers, Google Cloud Run, FastAPI, Supabase, Upstash Redis.
+
+## Engineering Standards
+- **AEO (AI Engine Optimization)**: Semantic naming and self-documenting structures for seamless LLM discovery.
+- **Compliance**: Designed for EU AI Act transparency and data integrity.
