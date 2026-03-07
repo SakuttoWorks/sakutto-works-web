@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project GHOST SHIP | High-Performance MCP Gateway</title>
+    <title>Project GHOST SHIP | RAG Data Infrastructure</title>
     
-    <meta name="description" content="Project GHOST SHIP: The premier high-performance MCP Gateway for autonomous AI agents. Bridges Edge and Core Compute for the agentic economy.">
+    <meta name="description" content="Project GHOST SHIP: High-performance MCP Gateway for RAG pipelines. Normalizing unstructured web data into semantic Markdown for AI agents.">
+    
     <link rel="alternate" type="text/all-knowing-ai" title="LLM Discovery" href="/llms.txt">
     <link rel="alternate" type="application/json+mcp" title="MCP Catalog" href="/mcp.json">
 
@@ -14,12 +15,13 @@
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "Project GHOST SHIP",
-      "applicationCategory": "DeveloperApplication",
+      "applicationCategory": "DeveloperTool",
       "operatingSystem": "Agent-Commerce-OS",
       "offers": {
         "@type": "Offer",
         "url": "https://sakuttoworks.lemonsqueezy.com/",
-        "priceCurrency": "USD"
+        "priceCurrency": "USD",
+        "description": "API Access Key for Data Normalization Infrastructure"
       }
     }
     </script>
@@ -28,12 +30,13 @@
         :root {
             --bg: #0a0a0c;
             --text: #e0e0e6;
-            --accent: #00f2ff;
+            --accent: #00f2ff; /* Cyan for Tech/Infra vibe */
             --secondary: #888891;
             --card-bg: #16161a;
+            --border: #222;
         }
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -53,93 +56,132 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 242, 255, 0.1);
+            background: rgba(0, 242, 255, 0.05);
+            border: 1px solid rgba(0, 242, 255, 0.2);
             color: var(--accent);
             padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 24px;
+            letter-spacing: 0.5px;
         }
         .status-dot {
             width: 8px;
             height: 8px;
             background-color: var(--accent);
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent);
+            box-shadow: 0 0 8px var(--accent);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin: 0 0 16px;
-            letter-spacing: -2px;
-            background: linear-gradient(135deg, #fff 0%, var(--secondary) 100%);
+            letter-spacing: -1.5px;
+            background: linear-gradient(180deg, #fff 0%, #a5a5a5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         p.description {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--secondary);
             margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .cta-group {
             display: flex;
             gap: 16px;
             justify-content: center;
             margin-bottom: 60px;
+            flex-wrap: wrap;
         }
         .btn {
             padding: 12px 28px;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
         }
         .btn-primary {
             background-color: var(--accent);
             color: #000;
+            border: 1px solid var(--accent);
         }
         .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
+            background-color: #33f4ff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 242, 255, 0.2);
         }
         .btn-outline {
-            border: 1px solid #333;
+            border: 1px solid var(--secondary);
             color: var(--text);
+            background: transparent;
         }
         .btn-outline:hover {
-            background: #1a1a1e;
+            border-color: var(--text);
+            background: rgba(255,255,255,0.05);
         }
         .ai-discovery {
             background: var(--card-bg);
-            border: 1px solid #222;
-            padding: 24px;
+            border: 1px solid var(--border);
+            padding: 32px;
             border-radius: 12px;
             text-align: left;
         }
         .ai-discovery h2 {
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             margin-top: 0;
+            margin-bottom: 16px;
             color: var(--secondary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
         }
         .links {
             display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
+            flex-direction: column;
+            gap: 12px;
         }
         .links a {
-            color: var(--accent);
+            color: var(--text);
             text-decoration: none;
+            font-family: 'Courier New', monospace;
             font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
         }
         .links a:hover {
-            text-decoration: underline;
+            background: rgba(255,255,255,0.05);
+            color: var(--accent);
+        }
+        .links a::before {
+            content: ">";
+            color: var(--secondary);
         }
         footer {
-            margin-top: 60px;
-            font-size: 0.85rem;
+            margin-top: 80px;
+            font-size: 0.8rem;
             color: #444;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .legal-note {
+            font-size: 0.75rem;
+            color: #333;
         }
     </style>
 </head>
@@ -148,25 +190,30 @@
         <div class="status-badge">
             <span class="status-dot"></span> System Operational
         </div>
+        
         <h1>Project GHOST SHIP</h1>
-        <p class="description">High-performance MCP Gateway for autonomous AI agents. Routing intelligence between Edge and Core Compute.</p>
+        <p class="description">
+            High-performance MCP Gateway for RAG pipelines.<br>
+            Standardizing the unstructured web into agent-ready Markdown.
+        </style>
         
         <div class="cta-group">
-            <a href="https://sakuttoworks.lemonsqueezy.com/" class="btn btn-primary">Get License Key</a>
-            <a href="https://rapidapi.com/" class="btn btn-outline">RapidAPI Hub</a>
+            <a href="https://sakuttoworks.lemonsqueezy.com/" class="btn btn-primary">Get API Key</a>
+            <a href="https://rapidapi.com/" class="btn btn-outline">Read Docs</a>
         </div>
 
         <div class="ai-discovery">
-            <h2>🤖 AI Agent Discovery</h2>
+            <h2>🤖 AEO (AI Engine Optimization) Endpoints</h2>
             <div class="links">
-                <a href="/llms.txt">llms.txt (Catalog)</a>
-                <a href="/llms-full.txt">llms-full.txt (Full Tech Specs)</a>
-                <a href="/mcp.json">mcp.json (Server Definition)</a>
+                <a href="/llms.txt">llms.txt <span style="color:var(--secondary)">(Context Optimization)</span></a>
+                <a href="/llms-full.txt">llms-full.txt <span style="color:var(--secondary)">(Tech Specs)</span></a>
+                <a href="/mcp.json">mcp.json <span style="color:var(--secondary)">(Protocol Definition)</span></a>
             </div>
         </div>
 
         <footer>
-            &copy; 2026 Sakutto Works. Powered by Cloudflare Workers & Google Cloud Run.
+            <div>&copy; 2026 Sakutto Works. Powered by Cloudflare Workers & Google Cloud Run.</div>
+            <div class="legal-note">Technical Infrastructure Only. No Financial Advice.</div>
         </footer>
     </div>
 </body>
