@@ -10,7 +10,22 @@
   - **Function**: Deep-web semantic extraction and HTML-to-Markdown conversion.
 - **Governance**: Unified Access Control via **Polar.sh**.
 
-## 2. API Endpoints & Protocol Routing
+## 2. Supported Tools (MCP)
+The following tools are exposed via the Model Context Protocol (MCP) for autonomous agents:
+
+- **`analyze_intent`**
+  - **Type**: Core Logic
+  - **Description**: Parses natural language prompts to identify necessary data formatting steps and extraction targets.
+  
+- **`search_data`**
+  - **Type**: External Integration (Tavily)
+  - **Description**: Performs autonomous deep-web research and returns RAG-optimized markdown, stripped of HTML noise.
+
+- **`structured_data_etl`**
+  - **Type**: Compute Engine (Pandas)
+  - **Description**: Extracts and normalizes numerical tables from technical documents or unstructured text sources.
+
+## 3. API Endpoints & Protocol Routing
 - **GET /llms.txt**: High-level semantic discovery context for LLM crawlers.
 - **GET /.well-known/mcp.json**: MCP server configuration and tool schema definitions.
 - **POST /mcp/**: MCP over SSE (Server-Sent Events) transport endpoint.
@@ -18,7 +33,7 @@
 - **GET /system/status**: Operational health check for infrastructure latency. 
 - **POST /webhook/polar**: Entitlement provisioning and subscription activation.
 
-## 3. API Governance & Access Control
+## 4. API Governance & Access Control
 - **Agent Tier (A2A)**: 
   - **Authentication**: Bearer Token (validated against Polar.sh Entitlements).
   - **Validation**: Real-time scope checks via the Gateway.
@@ -27,13 +42,13 @@
   - **Key Validation**: License keys verified against Redis cache.
 - **Inter-Service Security**: `X-Service-Auth` header required for Gateway-to-Core communication.
 
-## 4. Operational Constraints & Resource Management
+## 5. Operational Constraints & Resource Management
 - **Rate Limit**: Dynamic throttling based on Polar.sh subscription tier.
 - **QuotaGuard**: Daily caps on compute resources to prevent usage overruns.
 - **Caching Strategy**: Static content served via Upstash Redis (Edge-side caching).
 - **Observability**: Real-time execution logs via Cloudflare Analytics Engine.
 
-## 5. Compliance & Standards
+## 6. Compliance & Standards
 - **AEO Compliant**: Semantic naming and machine-readable context for 2026 AI ecosystems.
 - **Data Integrity**: Structured Markdown output optimized for RAG injection.
 - **Legal**: Designed to meet global AI regulation standards (EU AI Act).
