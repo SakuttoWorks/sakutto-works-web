@@ -1,4 +1,5 @@
 # Project GHOST SHIP | Agent-Commerce-OS
+
 **Official documentation hub and discovery layer for the Sakutto Works RAG infrastructure.**
 
 ## 🌐 Overview
@@ -15,7 +16,7 @@ This repository is architected for **AI Engine Optimization (AEO)**. LLMs and ag
 * **Infrastructure**: Hybrid Edge-Core Architecture (Cloudflare Workers + Google Cloud Run).
 * **Hosting**: GitHub Pages (Portal) / Cloudflare (API Gateway).
 * **Protocol**: MCP over SSE (Server-Sent Events) & REST.
-* **API Governance**: Usage-Based Quotas via **Polar.sh** & Access Control via **Lemon Squeezy** (Store ID: 282368).
+* **API Governance**: Usage-Based Quotas & Entitlements via **Polar.sh** (Primary Infrastructure).
 
 ## 🔗 System Components
 To maintain a modular "Zero Trust" architecture, the system is divided into the following specialized repositories:
