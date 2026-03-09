@@ -1,6 +1,6 @@
 # Legal Disclaimer & Service Scope
 
-**Last Updated: March 8, 2026**
+**Last Updated: March 9, 2026**
 
 ## 1. Nature of Service: Technical Infrastructure
 **Project GHOST SHIP (Agent-Commerce-OS)** is a purely technical infrastructure designed for **data normalization, semantic extraction, and Markdown formatting**. Sakutto Works provides the middleware and protocols required to convert unstructured web content into RAG-optimized formats for Large Language Models (LLMs).
@@ -13,3 +13,6 @@
 
 ## 3. User Responsibility
 This platform facilitates the ingestion of public web information into AI pipelines. Users are solely responsible for how their AI agents utilize this structured data. Sakutto Works assumes no liability for any decisions, financial or otherwise, taken based on the data processed by this API.
+
+## 4. Service Fees & Billing Policy
+Any fees charged through this portal are strictly for **technical resource consumption** (e.g., API bandwidth, compute time, storage). No portion of the fee is attributable to the sale of financial data, investment advice, or proprietary market analysis.
