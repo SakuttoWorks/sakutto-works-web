@@ -26,7 +26,9 @@ To maintain a strict "Zero Trust" and high-performance ecosystem, the infrastruc
    The "Intelligent Edge." Handles Polar.sh license key validation (sub-50ms cache), prompt injection shielding, and asynchronous usage metering ($0.10/call). Forwards requests with an `X-Internal-Secret`.
 2. **[Core] Layer B (Google Cloud Run)**:
    The "Agentic Factory." A high-speed Python/FastAPI micro-container built with `uv`. Performs deep semantic extraction using Jina Reader/Firecrawl. Drops all unauthenticated traffic.
-3. **[Portal] This Repository (GitHub Pages)**:
+3. **[Client] Layer C (MCP Server)**:
+   The official [ghost-ship-mcp-server](https://github.com/SakuttoWorks/ghost-ship-mcp-server). Bridges Claude Desktop and other AI agents to the Gateway via the Model Context Protocol.
+4. **[Portal] This Repository (GitHub Pages)**:
    The static AEO documentation hub (`sakutto.works`), routing traffic to the dynamic gateway (`api.sakutto.works`).
 
 ---
