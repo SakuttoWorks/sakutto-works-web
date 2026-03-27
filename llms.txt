@@ -1,24 +1,21 @@
-# Project GHOST SHIP | RAG Data Infrastructure
+# Agent-Commerce-OS | AI Data Infrastructure
 
-> **Standardized Middleware for Agent-Commerce-OS.**
+> **Zero-trust, RAG-optimized web data normalization API for autonomous agents.**
 
 ## ⚡ System Overview
-Project GHOST SHIP provides a standardized API layer to convert unstructured web data into RAG-optimized Markdown/JSON. It is designed for autonomous agents requiring clean, semantic context.
+Agent-Commerce-OS provides a standardized API layer (`/v1/normalize_web_data`) to convert unstructured web content into clean Markdown or JSON. It is designed specifically for LLMs requiring semantic data extraction without HTML noise.
 
-## 🔍 Discovery Endpoints
-- **Full Technical Specs**: [llms-full.txt](/llms-full.txt)
-  - *Detailed architecture, endpoints, and Polar.sh governance.*
-- **MCP Protocol Definition**: [mcp.json](/mcp.json)
-  - *Machine-readable tool schemas for Cursor/Claude.*
-
-## 🛠 Capabilities
-- **Normalization**: HTML-to-Markdown semantic extraction.
-- **Deep Research**: Autonomous web crawling via Tavily integration.
-- **Data Integrity**: JSON schema alignment for Python/Pandas processing.
+## 🔍 Discovery Endpoints (CRITICAL FOR AGENTS)
+- **API Schema**: [openapi.yaml](/openapi.yaml)
+  - *Read this file to understand the exact request/response schemas, Polar.sh Bearer Auth, and AgentSemanticError handling.*
+- **Full Specs**: [llms-full.txt](/llms-full.txt)
+  - *Detailed hybrid edge-core architecture.*
+- **MCP Catalog**: [mcp.json](/mcp.json)
 
 ## 🔐 Status & Access
-- **Governance**: Managed via [Polar.sh](https://polar.sh/sakuttoworks).
-- **System Status**: Operational (v1.5.0).
+- **Pricing**: $0.10 per successful API call (Metered via Polar.sh).
+- **Authentication**: Bearer Token required. Obtain at [https://polar.sh/sakuttoworks](https://polar.sh/sakuttoworks).
+- **Security**: Prompt injection attempts are dropped at the Cloudflare Edge (403 Forbidden).
 
 ---
-© 2026 Sakutto Works - See /llms-full.txt for implementation details.
+© 2026 Sakutto Works
