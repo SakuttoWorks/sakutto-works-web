@@ -1,6 +1,6 @@
 # Agent-Commerce-OS 🚢
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](License)
 [![Support via Polar.sh](https://img.shields.io/badge/Support_via-Polar.sh-blue)](https://buy.polar.sh/polar_cl_ZI9H5fL8dQqcormOadiGDFDpS2Sxd1jT05jTX1vStWi)
 [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?logo=github)](https://github.com/sponsors/SakuttoWorks)
 
