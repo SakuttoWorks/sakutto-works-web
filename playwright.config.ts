@@ -13,7 +13,7 @@ export default defineConfig({
     projects: [
         { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
     ],
-    // テスト実行時にローカルサーバーを自動起動
+    // Automatically start the local server when running tests
     webServer: {
         command: 'npx serve -p 3000 .',
         url: 'http://localhost:3000',

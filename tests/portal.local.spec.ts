@@ -3,15 +3,15 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as yaml from 'yaml';
 
-test.describe('静的ファイルのフォーマット検証 (Local)', () => {
-    test('mcp.jsonが有効なJSONであること', () => {
+test.describe('Static File Format Validation (Local)', () => {
+    test('mcp.json should be valid JSON', () => {
         const rawData = fs.readFileSync(path.join(__dirname, '../mcp.json'), 'utf-8');
         expect(() => JSON.parse(rawData)).not.toThrow();
         const data = JSON.parse(rawData);
         expect(data).toHaveProperty('mcpVersion');
     });
 
-    test('openapi.yamlが有効なYAMLであること', () => {
+    test('openapi.yaml should be valid YAML', () => {
         const rawData = fs.readFileSync(path.join(__dirname, '../openapi.yaml'), 'utf-8');
         expect(() => yaml.parse(rawData)).not.toThrow();
         const data = yaml.parse(rawData);
@@ -19,9 +19,9 @@ test.describe('静的ファイルのフォーマット検証 (Local)', () => {
     });
 });
 
-test.describe('ステータスバッジのUIテスト (Local)', () => {
-    test('Gatewayが正常な場合「Gateway Operational」が表示されること', async ({ page }) => {
-        // APIリクエストをモックして正常系をシミュレート
+test.describe('Status Badge UI Tests (Local)', () => {
+    test('should display "Gateway Operational" when Gateway is healthy', async ({ page }) => {
+        // Mock API request to simulate a healthy state
         await page.route('https://api.sakutto.works/v1/normalize_web_data', async route => {
             await route.fulfill({ status: 204 });
         });
@@ -32,8 +32,8 @@ test.describe('ステータスバッジのUIテスト (Local)', () => {
         await expect(badge).toHaveClass(/operational/);
     });
 
-    test('Gatewayが503エラーの場合「Gateway Unavailable」が表示されること', async ({ page }) => {
-        // APIリクエストをモックして異常系をシミュレート
+    test('should display "Gateway Unavailable" when Gateway returns a 503 error', async ({ page }) => {
+        // Mock API request to simulate an error state
         await page.route('https://api.sakutto.works/v1/normalize_web_data', async route => {
             await route.fulfill({ status: 503 });
         });
