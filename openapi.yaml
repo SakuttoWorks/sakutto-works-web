@@ -1,3 +1,4 @@
+# ghost-ship-portal/openapi.yaml
 openapi: 3.1.0
 info:
   title: Agent-Commerce-OS API
@@ -54,6 +55,11 @@ paths:
                   enum: [markdown, json]
                   default: markdown
                   description: The desired output format.
+                fields:
+                  type: array
+                  items:
+                    type: string
+                  description: Optional Lite GraphQL-style field selection to minimize token consumption.
       responses:
         "200":
           description: Successfully normalized data.
